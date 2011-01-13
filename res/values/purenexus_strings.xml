@@ -17,6 +17,8 @@
 <!-- Development Settings -->
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
 <!-- Device Info Settings -->
     <!-- Nexus version -->
