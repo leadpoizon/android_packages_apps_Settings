@@ -29,6 +29,8 @@
     <!-- ADB debugging notification -->
     <string name="adb_notify">ADB notification</string>
     <string name="adb_notify_summary">Display a notification when USB or network debugging is enabled</string>
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
 
 <!-- Device Info Settings -->
     <!-- Nexus version -->
