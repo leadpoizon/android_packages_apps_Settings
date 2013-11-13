@@ -26,6 +26,9 @@
 <!-- Development Settings -->
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
+    <!-- ADB debugging notification -->
+    <string name="adb_notify">ADB notification</string>
+    <string name="adb_notify_summary">Display a notification when USB or network debugging is enabled</string>
 
 <!-- Device Info Settings -->
     <!-- Nexus version -->
