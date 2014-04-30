@@ -71,7 +71,8 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
     private static final int MENU_ID_SCAN = Menu.FIRST;
     private static final int MENU_ID_RENAME_DEVICE = Menu.FIRST + 1;
     private static final int MENU_ID_SHOW_RECEIVED = Menu.FIRST + 2;
-    private static final int MENU_ID_ICON_IN_STATUSBAR = Menu.FIRST + 3;
+    private static final int MENU_ID_ACCEPT_ALL_FILES = Menu.FIRST + 3;
+    private static final int MENU_ID_ICON_IN_STATUSBAR = Menu.FIRST + 4;
 
     /* Private intent to show the list of received files */
     private static final String BTOPP_ACTION_OPEN_RECEIVED_FILES =
@@ -210,6 +211,8 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
         int textId = isDiscovering ? R.string.bluetooth_searching_for_devices :
             R.string.bluetooth_search_for_devices;
 
+        boolean isAcceptAllFilesEnabled = Settings.System.getInt(getContentResolver(),
+                Settings.System.BLUETOOTH_ACCEPT_ALL_FILES, 0) == 1;
         boolean isIconinStatusbarEnabled = Settings.System.getInt(getContentResolver(),
                 Settings.System.SHOW_BT_ICON , 1) == 1;
 
@@ -220,6 +223,10 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 .setEnabled(bluetoothIsEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(Menu.NONE, MENU_ID_SHOW_RECEIVED, 0, R.string.bluetooth_show_received_files)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(Menu.NONE, MENU_ID_ACCEPT_ALL_FILES, 0, R.string.bluetooth_accept_all_files)
+                .setCheckable(true)
+                .setChecked(isAcceptAllFilesEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(Menu.NONE, MENU_ID_ICON_IN_STATUSBAR, 0, R.string.bluetooth_statusbar_icon)
                 .setCheckable(true)
@@ -247,6 +254,13 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 getActivity().sendBroadcast(intent);
                 return true;
 
+            case MENU_ID_ACCEPT_ALL_FILES:
+                item.setChecked(!item.isChecked());
+                Settings.System.putInt(getContentResolver(),
+                        Settings.System.BLUETOOTH_ACCEPT_ALL_FILES,
+                        item.isChecked() ? 1 : 0);
+                return true;
+				
             case MENU_ID_ICON_IN_STATUSBAR:
                 item.setChecked(!item.isChecked());
                 Settings.System.putInt(getContentResolver(),

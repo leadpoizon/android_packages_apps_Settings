@@ -17,6 +17,8 @@
 <!-- BlueTooth Settings -->
     <!-- Bluetooth Statusbar Icon -->
     <string name="bluetooth_statusbar_icon">BT icon in statusbar</string>
+    <!-- Bluetooth accept all the file types -->
+    <string name="bluetooth_accept_all_files">Accept all file types</string>
 
 <!-- Custom Settings -->
     <!-- Dashboard -->
