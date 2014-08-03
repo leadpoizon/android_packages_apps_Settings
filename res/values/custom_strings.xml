@@ -363,6 +363,11 @@
     <string name="zen_mode_none_category">No interruptions</string>
     <string name="zen_mode_alarms">Allow alarms</string>
 
+<!-- Sound & Notification Settings -->
+    <!-- scramble pin lock -->
+    <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
+    <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
+
 <!-- Appops -->
     <!-- Appops Summaries -->
     <string name="app_ops_summaries_coarse_location">coarse location</string>
