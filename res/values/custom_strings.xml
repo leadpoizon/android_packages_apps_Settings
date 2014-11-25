@@ -165,6 +165,11 @@
     <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
     <string name="alarm_indicator">Alarm icon</string>
     <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
+    <!-- VolumeRocker Settings -->
+    <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
+    <string name="volbtn_cursor_control_off">Disabled</string>
+    <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
+    <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <!-- Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_summary">Custom clock and date options</string>

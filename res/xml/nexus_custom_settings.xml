@@ -49,7 +49,7 @@
         <PreferenceScreen
             android:fragment="com.android.settings.nexus.VolumeRockerSettings"
             android:key="volume_rocker_settings_category"
-            android:title="@string/volume_rocker_tile" />
+            android:title="@string/volume_rocker_title" />
 
     </PreferenceCategory>
 
