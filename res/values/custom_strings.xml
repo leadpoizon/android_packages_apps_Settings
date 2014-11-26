@@ -22,12 +22,15 @@
 <!-- BlueTooth Settings -->
     <!-- Bluetooth accept all the file types -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
-
-<!-- Custom Settings -->
-    <!-- Dashboard -->
-    <string name="header_category_custom">Rom Control</string>
-    <string name="supersu_title">SuperSU</string>
-    <string name="custom_settings_title">Custom Settings</string>
+     
+<!-- Custom Settings -->    
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right" translatable="false">→</string>
+    <string name="arrow_down" translatable="false">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
     <!-- Custom Categorys -->
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
@@ -35,6 +38,13 @@
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="notification_drawer_title">Notification drawer</string>
+    <!-- Dashboard -->
+    <string name="header_category_custom">Rom Control</string>
+    <string name="supersu_title">SuperSU</string>
+    <string name="custom_settings_title">Custom Settings</string>
+    <!-- General strings -->
+    <string name="reset">Reset</string>
+    <string name="default_string">Default</string>
     <!-- Navigation bar -->
     <string name="navigation_bar_opt">Navbar options</string>
     <string name="navigation_bar_cus">Navbar customization</string>
@@ -133,6 +143,28 @@
     <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
     <string name="alarm_indicator">Alarm icon</string>
     <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
+    <!-- Clock -->
+    <string name="status_bar_clock">Clock and date</string>
+    <string name="status_bar_clock_summary">Custom clock and date options</string>
+    <string name="clock_title_enable">Alignment</string>
+    <string name="clock_color_title">Color</string>
+    <string name="status_bar_show_clock_title">Show clock and date</string>
+    <string name="status_bar_am_pm_title">AM/PM</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <string name="right_clock">Right clock</string>
+    <string name="center_clock">Center clock</string>
+    <string name="clock_date_display">Date</string>
+    <string name="clock_date_style">Date style</string>
+    <string name="clock_date_format">Date format</string>
+    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">Enter string</string>
+    <string name="clock_am_pm_date_normal">Normal</string>
+    <string name="clock_am_pm_date_small">Small</string>
+    <string name="clock_am_pm_date_none">Hidden</string>
+    <string name="clock_date_style_lowercase">Lowercase</string>
+    <string name="clock_date_style_uppercase">Uppercase</string>
+    <string name="clock_date_format_custom">Custom java format</string>
+    <string name="status_bar_clock_style_reset_message">Reset clock color ?</string>
     <!-- Battery Options -->
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
