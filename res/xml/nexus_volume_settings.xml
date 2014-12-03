@@ -18,6 +18,12 @@
     android:key="volume_rocker_settings_category"
     android:title="@string/volume_rocker_title">
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="volume_wake_screen"
+        android:title="@string/volbtn_wake_device_title"
+        android:summary="@string/volbtn_wake_device_summary"
+        android:defaultValue="false" />
+
     <ListPreference
         android:key="volume_key_cursor_control"
         android:dialogTitle="@string/volbtn_cursor_control_title"
