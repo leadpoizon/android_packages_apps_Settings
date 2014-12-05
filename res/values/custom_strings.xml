@@ -198,6 +198,8 @@
     <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
     <string name="status_bar_ticker_title">Notification ticker</string>
     <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
     <!-- VolumeRocker Settings -->
     <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
     <string name="volbtn_cursor_control_off">Disabled</string>
