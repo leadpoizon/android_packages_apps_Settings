@@ -31,4 +31,8 @@
 <!-- Display Settings -->
     <!-- Font size sample text -->
     <string name="font_size_sample">Font Size</string>
+
+<!-- Sound & Notification Settings -->
+    <!-- Other sound settings - Volume adjustment sound -->
+    <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
 </resources>
