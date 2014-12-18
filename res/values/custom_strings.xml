@@ -172,6 +172,8 @@
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="volbtn_wake_device_title">Volume button wake</string>
     <string name="volbtn_wake_device_summary">Pressing either volume button will wake your device</string>
+    <string name="volbtn_music_controls_title">Music control</string>
+    <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
     <!-- Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_summary">Custom clock and date options</string>

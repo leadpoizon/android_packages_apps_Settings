@@ -19,6 +19,12 @@
     android:title="@string/volume_rocker_title">
 
     <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="volbtn_music_controls"
+        android:title="@string/volbtn_music_controls_title"
+        android:summary="@string/volbtn_music_controls_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="volume_wake_screen"
         android:title="@string/volbtn_wake_device_title"
         android:summary="@string/volbtn_wake_device_summary"
