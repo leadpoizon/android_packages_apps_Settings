@@ -44,6 +44,7 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
 
     private static final String CATEGORY_NAVBAR = "navigation_bar";
+    private static final String CATEGORY_NAVBARC = "navigation_barc";
 
     // kill-app long press back
     private SwitchPreference mKillAppLongPressBack;
@@ -59,6 +60,8 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
 
         final PreferenceCategory navbarCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_NAVBAR);
+        final PreferenceCategory navbarCategoryC =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_NAVBARC);
 
         // kill-app long press back
         mKillAppLongPressBack = (SwitchPreference) findPreference(KILL_APP_LONGPRESS_BACK);
