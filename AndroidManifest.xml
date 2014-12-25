@@ -1735,6 +1735,8 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+        <activity android:name=".headsup.HeadsUpSettings" />
+
         <!-- Display rotation -->
         <activity android:name="Settings$DisplayRotationActivity"
                 android:label="@string/display_rotation_title"
