@@ -34,6 +34,7 @@
     <string name="power_menu_title">Power menu</string>
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
+    <string name="notification_drawer_title">Notification drawer</string>
     <!-- Navigation bar -->
     <string name="navigation_bar_opt">Navbar options</string>
     <string name="navigation_bar_cus">Navbar customization</string>
@@ -57,6 +58,18 @@
     <string name="navigation_bar_size_40_dp">40 dp</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
+    <!-- Notification drawer -->
+    <string name="qs_category_title">Quick Settings</string>
+    <string name="qs_order_title">Select and order tiles</string>
+    <string name="add_qs">Add new tile</string>
+    <string name="cast_screen">Cast screen</string>
+    <string name="hotspot">Hotspot</string>
+    <string name="qs_action_delete">Delete</string>
+    <string name="qs_action_add">Add</string>
+    <string name="qs_action_no_more_tiles">No more tiles available</string>
+    <string name="qs_main_tiles_title">Enlarge first row</string>
+    <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
+    <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
     <!-- Power menu -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
