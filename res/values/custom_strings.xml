@@ -59,7 +59,7 @@
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (off)</string>
     <!-- Notification drawer -->
-    <string name="qs_category_title">Quick Settings</string>
+    <string name="qs_category_title">Quick Settings panel</string>
     <string name="qs_order_title">Select and order tiles</string>
     <string name="add_qs">Add new tile</string>
     <string name="cast_screen">Cast screen</string>
@@ -72,6 +72,10 @@
     <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
+    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
     <!-- Power menu -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
@@ -108,12 +112,8 @@
     <!-- Statusbar Settings -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
-    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
-    <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
-    <string name="status_bar_show_weather_title">Show weather</string>
-    <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
     <string name="bt_indicator">Bluetooth icon</string>
     <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
     <string name="alarm_indicator">Alarm icon</string>
