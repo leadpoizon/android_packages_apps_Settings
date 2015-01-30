@@ -171,7 +171,7 @@
     <string name="volbtn_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="volbtn_wake_device_title">Volume button wake</string>
-    <string name="volbtn_wake_device_summary">Pressing either volume button will wake your device</string>
+    <string name="button_wake_summary">Overrides music control</string>
     <string name="volbtn_music_controls_title">Music control</string>
     <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
     <!-- Clock -->
