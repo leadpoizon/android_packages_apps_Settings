@@ -124,6 +124,8 @@
     <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
+    <string name="notification_force_expand_title">Force expanded notifications</string>
+    <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
     <!-- Power menu -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
