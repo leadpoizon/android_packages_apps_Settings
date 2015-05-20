@@ -108,8 +108,8 @@
         <item>@string/app_ops_labels_receive_mms</item>
         <item>@string/app_ops_labels_receive_sms</item>
         <item>@string/app_ops_labels_send_sms</item>
-        <item>@string/app_ops_labels_read_sms</item>
-        <item>@string/app_ops_labels_write_sms</item>
+        <item>@string/app_ops_labels_receive_sms</item>
+        <item>@string/app_ops_labels_send_sms</item>
         <item>@string/app_ops_labels_modify_settings</item>
         <item>@string/app_ops_labels_draw_on_top</item>
         <item>@string/app_ops_labels_access_notifications</item>
