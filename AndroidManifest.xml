@@ -1975,6 +1975,10 @@
                 android:value="true" />
         </activity>
 
+        <!-- Purified Settings START -->
+        <activity android:name=".nexus.CustomSettings" />
+        <!-- Purified Settings END -->
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"

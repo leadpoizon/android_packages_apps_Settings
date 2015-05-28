@@ -24,6 +24,7 @@
     <!-- Dashboard -->
     <string name="header_category_custom">Rom Control</string>
     <string name="supersu_title">SuperSU</string>
+    <string name="custom_settings_title">Custom Settings</string>
 
 <!-- Development Settings -->
     <!-- Dev Options Enabled by Default -->

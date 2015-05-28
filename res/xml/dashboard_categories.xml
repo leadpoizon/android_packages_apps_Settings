@@ -76,12 +76,12 @@
             android:id="@+id/custom_section"
             android:title="@string/header_category_custom" >
 
-        <!-- AppOps -->
+        <!-- Custom Settings -->
         <dashboard-tile
-                android:id="@+id/app_ops_settings"
-                android:title="@string/app_ops_settings"
-                android:fragment="com.android.settings.applications.AppOpsSummary"
-                android:icon="@drawable/ic_settings_app_ops"
+                android:id="@+id/custom_settings"
+                android:title="@string/custom_settings_title"
+                android:fragment="com.android.settings.nexus.CustomSettings" 
+                android:icon="@drawable/ic_bt_config"
                 />
 
         <!-- SuperSU -->

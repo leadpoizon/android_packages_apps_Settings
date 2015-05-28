@@ -239,7 +239,7 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
-            R.id.app_ops_settings,
+            R.id.custom_settings,
             R.id.supersu_settings
     };
 
