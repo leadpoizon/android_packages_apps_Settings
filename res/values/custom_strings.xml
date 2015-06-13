@@ -26,6 +26,7 @@
     <string name="supersu_title">SuperSU</string>
     <string name="custom_settings_title">Custom Settings</string>
     <!-- Custom Categorys -->
+    <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
     <!-- Statusbar Settings -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
