@@ -15,18 +15,13 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/custom_settings_title" >
+    android:key="status_bar_general_category"
+    android:title="@string/status_bar_title">
 
-    <PreferenceScreen
-        android:fragment="com.android.settings.applications.AppOpsSummary"
-        android:key="app_ops_summary"
-        android:icon="@drawable/ic_settings_app_ops"
-        android:title="@string/app_ops_settings" />
-
-    <PreferenceScreen
-        android:fragment="com.android.settings.nexus.StatusBarSettings"
-        android:key="status_bar_general_category"
-        android:icon="@drawable/ic_settings_extdesk_hidenavbar"
-        android:title="@string/status_bar_title" />
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="status_bar_brightness_control"
+        android:title="@string/status_bar_toggle_brightness"
+        android:summary="@string/status_bar_toggle_brightness_summary"
+        android:defaultValue="false" />
 
 </PreferenceScreen>
