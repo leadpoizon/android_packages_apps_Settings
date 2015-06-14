@@ -29,6 +29,7 @@
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
     <string name="power_menu_title">Power menu</string>
+    <string name="recent_app_title">Recent apps</string>
     <!-- Power menu -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
@@ -40,6 +41,9 @@
     <string name="power_menu_bug_report_title">Bug report</string>
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
+    <!-- Recent Apps -->
+    <string name="recents_longpress_title">Recents longpress</string>
+    <string name="recents_longpress_summary">Enable recents longpress to go to last open app</string>
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Screen recorder</string>
     <string name="screen_recorder_video_dimensions_title">Video size</string>

@@ -39,6 +39,12 @@
         android:title="@string/power_menu_title" />
 
     <PreferenceScreen
+        android:fragment="com.android.settings.nexus.RecentAppSettings"
+        android:key="recent_app_general_category"
+        android:icon="@drawable/ic_settings_recents"
+        android:title="@string/recent_app_title" />	
+    
+    <PreferenceScreen
         android:fragment="com.android.settings.nexus.ScreenRecorderSettings"
         android:key="screen_recorder"
 	android:icon="@drawable/ic_settings_screenrecord"
