@@ -20,8 +20,6 @@
     <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
 
 <!-- BlueTooth Settings -->
-    <!-- Bluetooth Statusbar Icon -->
-    <string name="bluetooth_statusbar_icon">BT icon in statusbar</string>
     <!-- Bluetooth accept all the file types -->
     <string name="bluetooth_accept_all_files">Accept all file types</string>
 
@@ -101,6 +99,10 @@
     <string name="double_tap_to_sleep_summary">Double tap on the status bar to put the device to sleep</string>
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
+    <string name="bt_indicator">Bluetooth icon</string>
+    <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
+    <string name="alarm_indicator">Alarm icon</string>
+    <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
     <!-- Battery Options -->
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>

@@ -72,7 +72,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
     private static final int MENU_ID_RENAME_DEVICE = Menu.FIRST + 1;
     private static final int MENU_ID_SHOW_RECEIVED = Menu.FIRST + 2;
     private static final int MENU_ID_ACCEPT_ALL_FILES = Menu.FIRST + 3;
-    private static final int MENU_ID_ICON_IN_STATUSBAR = Menu.FIRST + 4;
 
     /* Private intent to show the list of received files */
     private static final String BTOPP_ACTION_OPEN_RECEIVED_FILES =
@@ -213,8 +212,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
 
         boolean isAcceptAllFilesEnabled = Settings.System.getInt(getContentResolver(),
                 Settings.System.BLUETOOTH_ACCEPT_ALL_FILES, 0) == 1;
-        boolean isIconinStatusbarEnabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.SHOW_BT_ICON , 1) == 1;
 
         menu.add(Menu.NONE, MENU_ID_SCAN, 0, textId)
                 .setEnabled(bluetoothIsEnabled && !isDiscovering)
@@ -227,10 +224,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
         menu.add(Menu.NONE, MENU_ID_ACCEPT_ALL_FILES, 0, R.string.bluetooth_accept_all_files)
                 .setCheckable(true)
                 .setChecked(isAcceptAllFilesEnabled)
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        menu.add(Menu.NONE, MENU_ID_ICON_IN_STATUSBAR, 0, R.string.bluetooth_statusbar_icon)
-                .setCheckable(true)
-                .setChecked(isIconinStatusbarEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -258,13 +251,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 item.setChecked(!item.isChecked());
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.BLUETOOTH_ACCEPT_ALL_FILES,
-                        item.isChecked() ? 1 : 0);
-                return true;
-				
-            case MENU_ID_ICON_IN_STATUSBAR:
-                item.setChecked(!item.isChecked());
-                Settings.System.putInt(getContentResolver(),
-                        Settings.System.SHOW_BT_ICON,
                         item.isChecked() ? 1 : 0);
                 return true;
         }
