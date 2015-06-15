@@ -40,6 +40,8 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
 
     // kill-app long press back
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+    // Naviigation bar left
+    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
 
     private static final String CATEGORY_NAVBAR = "navigation_bar";
 
@@ -64,6 +66,10 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
         int killAppLongPressBack = Settings.Secure.getInt(getContentResolver(),
                 KILL_APP_LONGPRESS_BACK, 0);
         mKillAppLongPressBack.setChecked(killAppLongPressBack != 0);
+
+        if (!Utils.isPhone(getActivity())) {
+            navbarCategory.removePreference(
+                    findPreference(Settings.System.NAVBAR_LEFT_IN_LANDSCAPE));
         }
 
     }
@@ -85,3 +91,4 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
         }
         return false;
     }
+}
