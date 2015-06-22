@@ -30,7 +30,9 @@
     <string name="arrow_right" translatable="false">→</string>
     <string name="arrow_down" translatable="false">↓</string>
     <string name="hex">Hex:</string>
+    <string name="hex_check_button_text">PREVIEW</string>
     <string name="hex_hint">#ff000000</string>
+    <string name="longpress_info">longpress red bordered presets to set custom preset</string>
     <!-- Custom Categorys -->
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
@@ -43,6 +45,7 @@
     <string name="supersu_title">SuperSU</string>
     <string name="custom_settings_title">Custom Settings</string>
     <!-- General strings -->
+    <string name="ok">OK</string>
     <string name="reset">Reset</string>
     <string name="default_string">Default</string>
     <!-- Navigation bar -->
@@ -147,7 +150,7 @@
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_summary">Custom clock and date options</string>
     <string name="clock_title_enable">Alignment</string>
-    <string name="clock_color_title">Color</string>
+    <string name="clock_color_title">Clock color</string>
     <string name="status_bar_show_clock_title">Show clock and date</string>
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>

@@ -14,12 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <!-- QuickSettings tiles -->
-    <dimen name="qs_tile_max_size">120dp</dimen>
-    <dimen name="qs_tile_max_padding">10dp</dimen>
-    <dimen name="qs_tile_dragged_z">10dp</dimen>
-    <!-- Colorpicker dimens for hue width, alpha height, and tracker radius -->
-    <dimen name="colorpicker_alpha_height">20dip</dimen>
-    <dimen name="colorpicker_tracker_radius">5dip</dimen>
-    <dimen name="colorpicker_hue_width">30dip</dimen>
+    <bool name="showFullColorPickSummary">true</bool>
 </resources>

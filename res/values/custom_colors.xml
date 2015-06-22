@@ -14,5 +14,16 @@
      limitations under the License.
 -->
 <resources>
+    <!-- For the colorpicker Preview button -->
+    <color name="cpbutton_background_pressed">#ff555555</color>	
+    <color name="transcol">#00000000</color>
+    <!-- If one wanted... they could alter the checkered alpha colors with the below -->
+    <color name="alphawhite">#ffffffff</color>
+    <color name="alphagray">#ffcbcbcb</color>
+    <!-- Set the border color to identify panels that can be user set via longpess -->
+    <color name="userpanel_border">#ffff0000</color>
+    <color name="userpanel_default1">#ff80cbc4</color>
+    <color name="userpanel_default2">#ff2196f3</color>
+    <color name="userpanel_default3">#ff37474f</color>
     <color name="qs_tile_tint_color">#FF009587</color>
 </resources>

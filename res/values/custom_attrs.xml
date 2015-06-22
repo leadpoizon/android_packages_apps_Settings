@@ -20,4 +20,11 @@
         <attr name="defaultValue" format="float" />
         <attr name="digits" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="ColorPickPref">
+        <attr name="alphaSlider" format="boolean" />
+        <attr name="alphaText" format="boolean" />
+        <attr name="colorgroupname" format="string" />
+    </declare-styleable>
+
 </resources>

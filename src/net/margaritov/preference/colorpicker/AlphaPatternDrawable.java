@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2010 Daniel Nilsson
+ * Copyright (C) 2015 dwitherell
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +17,7 @@
 
 package net.margaritov.preference.colorpicker;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -24,11 +26,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
+import com.android.settings.R;
+
 /**
- * This drawable that draws a simple white and gray chessboard pattern.
+ * From author Daniel Nilsson - This draws a simple 2 color chessboard pattern.
  * It's pattern you will often see as a background behind a
  * partly transparent image in many applications.
- * @author Daniel Nilsson
  */
 public class AlphaPatternDrawable extends Drawable {
 
@@ -41,15 +44,13 @@ public class AlphaPatternDrawable extends Drawable {
     private int numRectanglesHorizontal;
     private int numRectanglesVertical;
 
-    /**
-     * Bitmap in which the pattern will be cahched.
-     */
-    private Bitmap        mBitmap;
+    // where the pattern gets dumped/cached
+    private Bitmap mBitmap;
 
-    public AlphaPatternDrawable(int rectangleSize) {
+    public AlphaPatternDrawable(int rectangleSize, Context context) {
         mRectangleSize = rectangleSize;
-        mPaintWhite.setColor(0xffffffff);
-        mPaintGray.setColor(0xffcbcbcb);
+        mPaintWhite.setColor(context.getResources().getColor(R.color.alphawhite));
+        mPaintGray.setColor(context.getResources().getColor(R.color.alphagray));
     }
 
     @Override
@@ -64,12 +65,12 @@ public class AlphaPatternDrawable extends Drawable {
 
     @Override
     public void setAlpha(int alpha) {
-        throw new UnsupportedOperationException("Alpha is not supported by this drawwable.");
+        throw new UnsupportedOperationException("Alpha is not supported by this drawable.");
     }
 
     @Override
     public void setColorFilter(ColorFilter cf) {
-        throw new UnsupportedOperationException("ColorFilter is not supported by this drawwable.");
+        throw new UnsupportedOperationException("ColorFilter is not supported by this drawable.");
     }
 
     @Override
@@ -83,18 +84,10 @@ public class AlphaPatternDrawable extends Drawable {
         numRectanglesVertical = (int) Math.ceil(height / mRectangleSize);
 
         generatePatternBitmap();
-
     }
 
-    /**
-     * This will generate a bitmap with the pattern
-     * as big as the rectangle we were allow to draw on.
-     * We do this to chache the bitmap so we don't need to
-     * recreate it each time draw() is called since it
-     * takes a few milliseconds.
-     */
+    // Generates bitmap cache with pattern as big as allowed to avoid recreating on draw()
     private void generatePatternBitmap(){
-
         if(getBounds().width() <= 0 || getBounds().height() <= 0){
             return;
         }
@@ -114,15 +107,16 @@ public class AlphaPatternDrawable extends Drawable {
                 r.bottom = r.top + mRectangleSize;
                 r.right = r.left + mRectangleSize;
 
-                canvas.drawRect(r, isWhite ? mPaintWhite : mPaintGray);
+                if (isWhite) {
+                    canvas.drawRect(r, mPaintWhite);
+                } else {
+                    canvas.drawRect(r, mPaintGray);
+                }
 
                 isWhite = !isWhite;
             }
 
             verticalStartWhite = !verticalStartWhite;
-
         }
-
     }
-
 }

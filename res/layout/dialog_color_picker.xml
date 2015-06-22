@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2010 Daniel Nilsson
      Copyright (C) 2013 Slimroms
-
+     Copyright (C) 2015 dwitherell
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -23,11 +23,20 @@
     android:paddingRight="5dp"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_color_picker"
+        android:id="@+id/colorpick_title"
+        android:gravity="center"
+        android:layout_marginTop="2dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -42,12 +51,18 @@
             android:id="@+id/hex"
             android:hint="@string/hex_hint"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:maxLength="9" />
 
-        <ImageButton
+        <Button
             android:id="@+id/enter"
-            android:src="@drawable/ic_action_set"
-            android:background="@android:color/transparent"
+            android:text="@string/hex_check_button_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@drawable/colorpick_button_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -62,53 +77,67 @@
         android:layout_centerHorizontal="true"
         android:tag="portrait" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/longpress_info"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:orientation="horizontal"
-        android:layout_marginLeft="7dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         android:layout_marginTop="2dp">
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
             android:id="@+id/white_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
             android:id="@+id/black_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
-            android:id="@+id/cyan_panel"
+            android:id="@+id/default_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
-            android:id="@+id/red_panel"
+            android:id="@+id/userset1_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
-            android:id="@+id/green_panel"
+            android:id="@+id/userset2_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_marginRight="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
-            android:id="@+id/yellow_panel"
+            android:id="@+id/userset3_panel"
             android:layout_width="0px"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="0.5" />
 
     </LinearLayout>
@@ -118,7 +147,7 @@
         android:layout_height="wrap_content"
         android:text="@string/press_color_to_apply"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -131,14 +160,14 @@
         <net.margaritov.preference.colorpicker.ColorPickerPanelView
             android:id="@+id/old_color_panel"
             android:layout_width="0px"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="match_parent"
             android:text="@string/arrow_right"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
@@ -150,5 +179,4 @@
             android:layout_weight="0.5" />
 
     </LinearLayout>
-
 </LinearLayout>

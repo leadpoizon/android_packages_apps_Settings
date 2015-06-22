@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2010 Daniel Nilsson
  * Copyright (C) 2013 Slimroms
+ * Copyright (C) 2015 dwitherell
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,31 +25,22 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * This class draws a panel which which will be filled with a color which can be set.
- * It can be used to show the currently selected color which you will get from
- * the {@link ColorPickerView}.
- * @author Daniel Nilsson
- *
- */
+// This draws a panel that fills with a color which can be set - used for preview
 public class ColorPickerPanelView extends View {
 
-    /**
-     * The width in pixels of the border
-     * surrounding the color panel.
-     */
-    private final static float    BORDER_WIDTH_PX = 1;
+    // Width of surrounding border in pixels
+    private static float BORDER_WIDTH_PX = 1;
 
     private float mDensity = 1f;
 
-    private int         mBorderColor = 0xff6E6E6E;
-    private int         mColor = 0xff000000;
+    private int mBorderColor = 0xff6E6E6E;
+    private int mColor = 0xff000000;
 
-    private Paint        mBorderPaint;
-    private Paint        mColorPaint;
+    private Paint mBorderPaint;
+    private Paint mColorPaint;
 
-    private RectF        mDrawingRect;
-    private RectF        mColorRect;
+    private RectF mDrawingRect;
+    private RectF mColorRect;
 
     private AlphaPatternDrawable mAlphaPattern;
 
@@ -75,8 +67,7 @@ public class ColorPickerPanelView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
-        final RectF    rect = mColorRect;
+        final RectF rect = mColorRect;
 
         if(BORDER_WIDTH_PX > 0){
             mBorderPaint.setColor(mBorderColor);
@@ -94,7 +85,6 @@ public class ColorPickerPanelView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int height = MeasureSpec.getSize(heightMeasureSpec);
 
@@ -112,11 +102,10 @@ public class ColorPickerPanelView extends View {
         mDrawingRect.bottom = h - getPaddingBottom();
 
         setUpColorRect();
-
     }
 
     private void setUpColorRect(){
-        final RectF    dRect = mDrawingRect;
+        final RectF dRect = mDrawingRect;
 
         float left = dRect.left + BORDER_WIDTH_PX;
         float top = dRect.top + BORDER_WIDTH_PX;
@@ -125,7 +114,7 @@ public class ColorPickerPanelView extends View {
 
         mColorRect = new RectF(left,top, right, bottom);
 
-        mAlphaPattern = new AlphaPatternDrawable((int)(5 * mDensity));
+        mAlphaPattern = new AlphaPatternDrawable((int)(5 * mDensity), getContext());
 
         mAlphaPattern.setBounds(
             Math.round(mColorRect.left),
@@ -133,40 +122,34 @@ public class ColorPickerPanelView extends View {
             Math.round(mColorRect.right),
             Math.round(mColorRect.bottom)
         );
-
     }
 
-    /**
-     * Set the color that should be shown by this view.
-     * @param color
-     */
+    // Get surrounding panel border color
+    public int getBorderColor(){
+        return mBorderColor;
+    }
+
+    // Get color currently shown in view
+    public int getColor(){
+        return mColor;
+    }
+
+    // Set color that should show in this view
     public void setColor(int color){
         mColor = color;
         invalidate();
     }
 
-    /**
-     * Get the color currently show by this view.
-     * @return
-     */
-    public int getColor(){
-        return mColor;
-    }
-
-    /**
-     * Set the color of the border surrounding the panel.
-     * @param color
-     */
+    // Set surrounding panel border color
     public void setBorderColor(int color){
         mBorderColor = color;
         invalidate();
     }
 
-    /**
-     * Get the color of the border surrounding the panel.
-     */
-    public int getBorderColor(){
-        return mBorderColor;
+    // Set surrounding panel border width
+    public void setBorderWidth(float width){
+        BORDER_WIDTH_PX = width;
+        invalidate();
     }
 
 }

@@ -47,6 +47,7 @@ import com.android.settings.Utils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.Date;
+import java.util.Locale;
 
 public class StatusBarClockStyle extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
@@ -126,17 +127,10 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
 
         mColorPicker = (ColorPickerPreference) findPreference(PREF_COLOR_PICKER);
         mColorPicker.setOnPreferenceChangeListener(this);
-        int intColor = Settings.System.getInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_COLOR, -2);
-        if (intColor == -2) {
-            intColor = systemUiResources.getColor(systemUiResources.getIdentifier(
-                    "com.android.systemui:color/status_bar_clock_color", null, null));
-            mColorPicker.setSummary(getResources().getString(R.string.default_string));
-        } else {
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mColorPicker.setSummary(hexColor);
-        }
-        mColorPicker.setNewPreviewColor(intColor);
+        mColorPicker.setSummary(mColorPicker.getSummaryText() + ColorPickerPreference.convertToARGB(Settings.System.getInt(getActivity().getContentResolver(),
+                     Settings.System.STATUSBAR_CLOCK_COLOR, mColorPicker.getPrefDefault())));
+        mColorPicker.setNewPreviewColor(Settings.System.getInt(getActivity().getContentResolver(),
+                     Settings.System.STATUSBAR_CLOCK_COLOR, mColorPicker.getPrefDefault()));
 
         mClockDateDisplay = (ListPreference) findPreference(PREF_CLOCK_DATE_DISPLAY);
         mClockDateDisplay.setOnPreferenceChangeListener(this);
@@ -164,6 +158,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
         mStatusBarClock.setChecked((Settings.System.getInt(
                 getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_CLOCK, 1) == 1));
+        mColorPicker.setPreviewDim(mStatusBarClock.isChecked());
         mStatusBarClock.setOnPreferenceChangeListener(this);
 
         boolean mClockDateToggle = Settings.System.getInt(getActivity().getContentResolver(),
@@ -199,12 +194,9 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
             mClockStyle.setSummary(mClockStyle.getEntries()[index]);
             return true;
         } else if (preference == mColorPicker) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
-                    .valueOf(newValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUSBAR_CLOCK_COLOR, intHex);
+			Settings.System.putInt(getActivity().getContentResolver(),
+					Settings.System.STATUSBAR_CLOCK_COLOR, (Integer) newValue);					
+			preference.setSummary(((ColorPickerPreference) preference).getSummaryText() + ColorPickerPreference.convertToARGB((Integer) newValue));
             return true;
         } else if (preference == mClockDateDisplay) {
             int val = Integer.parseInt((String) newValue);
@@ -232,6 +224,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_CLOCK,
                     (Boolean) newValue ? 1 : 0);
+			mColorPicker.setPreviewDim((Boolean) newValue);		
             return true;
         } else if (preference == mClockDateFormat) {
             int index = mClockDateFormat.findIndexOfValue((String) newValue);

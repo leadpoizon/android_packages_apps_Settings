@@ -16,6 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:pure="http://schemas.android.com/apk/res-auto" 
     android:title="@string/status_bar_clock">
 
        <SwitchPreference
@@ -27,7 +28,10 @@
             android:key="clock_color"
             android:title="@string/clock_color_title"
             android:defaultValue="0xffffff"
-            android:dependency="status_bar_show_clock" />
+            android:dependency="status_bar_show_clock" 
+            android:dialogTitle="@string/clock_color_title"
+            pure:alphaSlider="true"
+            pure:alphaText="true" />
 
         <ListPreference
             android:key="clock_style"
