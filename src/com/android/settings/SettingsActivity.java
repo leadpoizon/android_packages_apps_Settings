@@ -72,6 +72,7 @@ import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.bluetooth.BluetoothSettings;
+import com.android.settings.nexus.CustomSettings;
 import com.android.settings.nexus.DisplayRotation;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -308,6 +309,7 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             WifiCallingSettings.class.getName(),
+            CustomSettings.class.getName(),
             DisplayRotation.class.getName()
     };
 
