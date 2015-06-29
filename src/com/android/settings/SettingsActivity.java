@@ -243,6 +243,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.custom_settings,
+            R.id.bitsyko_layers,
             R.id.supersu_settings
     };
 
@@ -1225,6 +1226,15 @@ public class SettingsActivity extends Activity
                     boolean supported = false;
                     try {
                         supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.bitsyko_layers) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.lovejoy777.rroandlayersmanager", 0).versionCode > 0);
                     } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {

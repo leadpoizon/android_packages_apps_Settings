@@ -46,6 +46,7 @@
     <string name="header_category_custom">Rom Control</string>
     <string name="supersu_title">SuperSU</string>
     <string name="custom_settings_title">Custom Settings</string>
+    <string name="bitsyko_layers">Layers Manager</string>
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
