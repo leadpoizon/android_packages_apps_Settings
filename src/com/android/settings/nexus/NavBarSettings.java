@@ -70,6 +70,16 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
                 KILL_APP_LONGPRESS_BACK, 0);
         mKillAppLongPressBack.setChecked(killAppLongPressBack != 0);
 
+        // Enable or disable NavbarImeSwitcher based on boolean: config_show_cmIMESwitcher
+        boolean showCmImeSwitcher = getResources().getBoolean(
+                com.android.internal.R.bool.config_show_cmIMESwitcher);
+        if (!showCmImeSwitcher) {
+            Preference pref = findPreference(Settings.System.STATUS_BAR_IME_SWITCHER);
+            if (pref != null) {
+                navbarCategory.removePreference(pref);
+            }
+        }
+
         if (!Utils.isPhone(getActivity())) {
             navbarCategory.removePreference(
                     findPreference(Settings.System.NAVBAR_LEFT_IN_LANDSCAPE));
