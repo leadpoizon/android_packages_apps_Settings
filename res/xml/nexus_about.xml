@@ -17,21 +17,24 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="PureNexus Info" >
 
-<!-- Developers -->
     <PreferenceCategory
-        android:key="developers"
-        android:title="@string/lead_dev">
+        android:key="useful"
+        android:title="@string/nexus_useful">
 
         <Preference
-            android:icon="@drawable/beans"
-            android:title="@string/beans"/>
+            android:icon="@drawable/pushbullet"
+            android:title="@string/nexus_updates">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.pushbullet.com/channel?tag=purenexus" />
+        </Preference>
 
         <Preference
             android:icon="@drawable/gplus"
-            android:title="@string/beans_gplus">
+            android:title="@string/nexus_gplus">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="https://plus.google.com/u/0/+NathanBenis/posts" />
+                android:data="https://plus.google.com/communities/103055954354785266764" />
         </Preference>
 
         <Preference
@@ -44,12 +47,22 @@
 
         <Preference
             android:icon="@drawable/donate"
-            android:title="@string/donate"
-            android:summary="@string/donate_sum">
+            android:title="@string/donate">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://forum.xda-developers.com/donatetome.php?u=4395895" />
         </Preference>
+
+    </PreferenceCategory>
+
+<!-- Developers -->
+    <PreferenceCategory
+        android:key="developers"
+        android:title="@string/lead_dev">
+
+        <Preference
+            android:title="@string/beans"
+       	    android:summary="@string/beans_sum"/>
 
     </PreferenceCategory>
 
@@ -69,10 +82,6 @@
         <Preference
             android:title="@string/daveya"
        	    android:summary="@string/daveya_sum"/>
-
-        <Preference
-            android:title="@string/layers"
-       	    android:summary="@string/layers_sum"/>
 
         <Preference
             android:title="@string/surge"

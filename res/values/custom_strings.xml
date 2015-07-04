@@ -41,7 +41,8 @@
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="notification_drawer_title">Notification drawer</string>
-    <string name="nexus_personalize">Personalization</string>
+    <string name="nexus_interface">Interface</string>
+    <string name="nexus_buttons">Buttons</string>
     <string name="nexus_system">System</string>
     <!-- Dashboard -->
     <string name="header_category_custom">Rom Control</string>
@@ -233,19 +234,19 @@
     <!-- Nexus about -->
     <string name="nexus_about">PureNexus info</string>
     <string name="nexus_about_summary">Misc info about the rom, developer and contributors</string>
+    <string name="nexus_useful">Useful links</string>
+    <string name="nexus_updates">Pushbullet update notifications</string>
     <string name="lead_dev">Lead Developer</string>
     <string name="beans">BeansTown106</string>
+    <string name="beans_sum">Main PureNexus maintainer</string>
     <string name="beans_twit">BeansTown\'s Twitter</string>
-    <string name="beans_gplus">BeansTown\'s Google+</string>
-    <string name="donate">Donate</string>
-    <string name="donate_sum">Support rom development by donating.</string>
+    <string name="nexus_gplus">PureNexus Google+ community</string>
+    <string name="donate">Donate to support development</string>
     <string name="contribute">Contributors</string>
     <string name="devonte">Dwitherell</string>
     <string name="devonte_sum">Coder/tweaker</string>
     <string name="dhack">Dhacker29</string>
-    <string name="dhack_sum">Gapps Base/kernel</string>
-    <string name="layers">Layers team</string>
-    <string name="layers_sum">Layers app/exposed commits</string>
+    <string name="dhack_sum">Gapps Base</string>
     <string name="daveya">DaveyAnnihalation</string>
     <string name="daveya_sum">Graphics/icons</string>
     <string name="surge">Surge1223</string>
