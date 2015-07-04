@@ -45,6 +45,11 @@
             android:fragment="com.android.settings.nexus.StatusBarSettings"
             android:key="status_bar_general_category"
             android:title="@string/status_bar_title" />
+	    
+        <PreferenceScreen
+            android:fragment="com.android.settings.nexus.VolumeRockerSettings"
+            android:key="volume_rocker_settings_category"
+            android:title="@string/volume_rocker_tile" />
 
     </PreferenceCategory>
 

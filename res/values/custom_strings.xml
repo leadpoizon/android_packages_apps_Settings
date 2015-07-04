@@ -37,6 +37,7 @@
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
     <string name="power_menu_title">Power menu</string>
+    <string name="volume_rocker_title">Volume rocker</string>
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="notification_drawer_title">Notification drawer</string>
