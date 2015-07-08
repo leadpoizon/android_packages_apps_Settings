@@ -69,9 +69,9 @@
             android:title="@string/app_ops_settings" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.nexus.ScreenRecorderSettings"
-            android:key="screen_recorder"
-            android:title="@string/screen_recorder_title" />
+            android:fragment="com.android.settings.nexus.VolNotifSettings"
+            android:key="notif_general_category"
+            android:title="@string/nexus_notification_settings" />
 
     </PreferenceCategory>
 

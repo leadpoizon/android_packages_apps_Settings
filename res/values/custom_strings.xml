@@ -41,6 +41,7 @@
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="notification_drawer_title">Notification drawer</string>
+    <string name="nexus_notification_settings">Notifications &amp; media</string>
     <string name="nexus_interface">Interface</string>
     <string name="nexus_buttons">Buttons</string>
     <string name="nexus_system">System</string>
@@ -126,6 +127,9 @@
     <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
+    <!-- Media and notifications -->
+    <string name="media_category">Media</string>
+    <string name="notification_category">Notification</string>
     <!-- Power menu -->
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
