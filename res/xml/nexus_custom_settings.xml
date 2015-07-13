@@ -63,16 +63,21 @@
         android:key="nexus_system"
         android:title="@string/nexus_system" >
 
-         <PreferenceScreen
+        <PreferenceScreen
             android:fragment="com.android.settings.applications.AppOpsSummary"
             android:key="app_ops_summary"
             android:title="@string/app_ops_settings" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.nexus.VolNotifSettings"
-            android:key="notif_general_category"
-            android:title="@string/nexus_notification_settings" />
+            android:fragment="com.android.settings.headsup.HeadsUpSettings"
+            android:key="heads_up_enabled"
+            android:title="@string/category_heads_up" />
 
+        <PreferenceScreen
+            android:fragment="com.android.settings.nexus.ScreenRecorderSettings"
+            android:key="screen_recorder"
+            android:title="@string/screen_recorder_title" />
+	
     </PreferenceCategory>
 
     <PreferenceScreen

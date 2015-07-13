@@ -79,17 +79,21 @@
             android:title="@string/dhack"
        	    android:summary="@string/dhack_sum"/>
 
+      <Preference
+            android:title="@string/wally"
+       	    android:summary="@string/gfx_sum"/>
+	    
         <Preference
             android:title="@string/daveya"
-       	    android:summary="@string/daveya_sum"/>
+       	    android:summary="@string/gfx_sum"/>
 
         <Preference
             android:title="@string/surge"
-       	    android:summary="@string/surge_sum"/>
+       	    android:summary="@string/tweak_sum"/>
 
       <Preference
             android:title="@string/bajasur"
-       	    android:summary="@string/bajasur_sum"/>
+       	    android:summary="@string/tweak_sum"/>
 
     </PreferenceCategory>
 

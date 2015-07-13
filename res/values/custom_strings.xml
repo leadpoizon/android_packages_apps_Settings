@@ -41,7 +41,6 @@
     <string name="recent_app_title">Recent apps</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="notification_drawer_title">Notification drawer</string>
-    <string name="nexus_notification_settings">Notifications &amp; media</string>
     <string name="nexus_interface">Interface</string>
     <string name="nexus_buttons">Buttons</string>
     <string name="nexus_system">System</string>
@@ -132,14 +131,8 @@
     <string name="status_bar_show_weather_summary">Show the weather above the Quick Settings panel</string>
     <string name="notification_force_expand_title">Force expanded notifications</string>
     <string name="notification_force_expand_summary">Auto expands notifications on apps that support it</string>
-    <!-- Media and notifications -->
-    <string name="media_category">Media</string>
-    <string name="notification_category">Notification</string>
-    <string name="status_bar_ticker_title">Notification ticker</string>
-    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
+    <!-- Heads up -->
     <string name="category_heads_up">Heads up notifications</string>
-    <string name="summary_heads_up_enabled">Heads up notifications are enabled</string>
-    <string name="summary_heads_up_disabled">Heads up notifications are disabled</string>
     <string name="add_heads_up_package">Add app</string>
     <string name="add_heads_up_dnd_summary">Don\'t show heads up in these applications</string>
     <string name="add_heads_up_blacklist_summary">Don\'t show heads up from these applications</string>
@@ -198,6 +191,8 @@
     <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
     <string name="alarm_indicator">Alarm icon</string>
     <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
+    <string name="status_bar_ticker_title">Notification ticker</string>
+    <string name="status_bar_ticker_summary">Notification text animation in the statusbar</string>
     <!-- VolumeRocker Settings -->
     <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
     <string name="volbtn_cursor_control_off">Disabled</string>
@@ -300,11 +295,11 @@
     <string name="dhack">Dhacker29</string>
     <string name="dhack_sum">Gapps Base</string>
     <string name="daveya">DaveyAnnihalation</string>
-    <string name="daveya_sum">Graphics/icons</string>
+    <string name="wally">Wally3614</string>
+    <string name="gfx_sum">Graphics/icons</string>
     <string name="surge">Surge1223</string>
-    <string name="surge_sum">Misc Tweaks</string>
     <string name="bajasur">Bajasur83</string>
-    <string name="bajasur_sum">Misc Tweaks</string>
+    <string name="tweak_sum">Misc Tweaks</string>
     <!-- Nexus version -->
     <string name="nexus_version">PureNexus version</string>
     <string name="nexus_version_default">Unknown</string>
