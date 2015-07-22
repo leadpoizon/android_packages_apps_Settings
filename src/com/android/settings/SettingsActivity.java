@@ -83,6 +83,7 @@ import com.android.settings.deviceinfo.Memory;
 import com.android.settings.deviceinfo.UsbSettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageSummary;
+import com.android.settings.headsup.HeadsUpSettings;
 import com.android.settings.notification.NotificationAppList;
 import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.quicklaunch.QuickLaunchSettings;
@@ -310,6 +311,7 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             WifiCallingSettings.class.getName(),
+            HeadsUpSettings.class.getName(),
             CustomSettings.class.getName(),
             DisplayRotation.class.getName()
     };
