@@ -132,6 +132,18 @@ public class QSTileHolder {
                 resourceName = "ic_qs_ringer_audible";
                 stringId = R.string.qs_notifications_tile;
                 break;
+            case QSConstants.TILE_BATTERY_SAVER:
+                resourceName = "ic_qs_battery_saver_on";
+                stringId = R.string.qs_battery_saver_tile;
+                break;
+            case QSConstants.TILE_BRIGHTNESS:
+                resourceName = "ic_qs_brightness_auto_off";
+                stringId = R.string.qs_brightness_tile;
+                break;
+            case QSConstants.TILE_SCREEN_OFF:
+                resourceName = "ic_qs_power";
+                stringId = R.string.qs_screen_off_tile;
+                break;
             case QSConstants.TILE_HEADS_UP:
                 resourceName = "ic_qs_heads_up_on";
                 stringId = R.string.qs_tile_heads_up;
