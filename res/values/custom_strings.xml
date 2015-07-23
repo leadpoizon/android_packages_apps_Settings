@@ -207,6 +207,8 @@
     <string name="volbtn_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
     <string name="volbtn_wake_device_title">Volume button wake</string>
     <string name="button_wake_summary">Overrides music control</string>
+    <string name="volume_adjust_sounds_title">Volume adjustment sound</string>
+    <string name="volume_adjust_sounds_summary">Make sound when adjusting volume</string>
     <string name="volbtn_music_controls_title">Music control</string>
     <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
     <!-- Clock -->
@@ -407,8 +409,6 @@
     <string name="app_notification_show_on_keyguard_summary">Show notifications from this app on the lock screen</string>
     <string name="app_notification_no_ongoing_on_keyguard_title">Disable persistent notification on lock screen</string>
     <string name="app_notification_no_ongoing_on_keyguard_summary">Never show persistent notifications from this app on the lock screen</string>
-    <!-- Other sound settings - Volume adjustment sound -->
-    <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
     <!-- Linked / unlinked notification volume -->
     <string name="link_volume_option_title">Link ring and notification volumes</string>
     <string name="notification_volume_option_title">Notification volume</string>
