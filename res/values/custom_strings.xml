@@ -372,6 +372,8 @@
     <string name="notification_light_default_value">Default</string>
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
+    <!-- Lockscreen wallpaper -->
+    <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
 <!-- Screen recorder Values -->
     <!-- video sizes -->
     <string name="screen_recorder_size_240x400">240x400</string>
