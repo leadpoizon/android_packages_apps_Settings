@@ -36,6 +36,7 @@
     <!-- Custom Categorys -->
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>
+    <string name="custom_display_title">Display</string>
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_title">Volume rocker</string>
     <string name="recent_app_title">Recent apps</string>
@@ -319,6 +320,8 @@
     <string name="model_name">Model name</string>
 
 <!-- Display Settings -->
+    <string name="nexus_display_category">Display options</string>
+    <string name="nexus_led_category">Led controls</string>
     <!-- Font size sample text -->
     <string name="font_size_sample">Font Size</string>
     <!-- LCD density -->
@@ -374,6 +377,7 @@
     <string name="notification_light_voicemail_title">Voicemail</string>
     <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Set a custom image as lockscreen wallpaper</string>
 <!-- Screen recorder Values -->
     <!-- video sizes -->
     <string name="screen_recorder_size_240x400">240x400</string>

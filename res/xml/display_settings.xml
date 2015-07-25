@@ -52,11 +52,6 @@
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
 
-        <ListPreference
-                android:key="lcd_density"
-                android:title="@string/lcd_density"
-                android:persistent="false" />
-
         <PreferenceScreen
                 android:key="screensaver"
                 android:title="@string/screensaver_settings_title"
