@@ -212,6 +212,8 @@
     <string name="volume_adjust_sounds_summary">Make sound when adjusting volume</string>
     <string name="volbtn_music_controls_title">Music control</string>
     <string name="volbtn_music_controls_summary">When the screen is off, long pressing the volume keys will seek music tracks</string>
+    <string name="swap_volume_buttons_title">Volume button swap</string>
+    <string name="swap_volume_buttons_summary">Adjust volume buttons action based on current rotation</string>
     <!-- Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_summary">Custom clock and date options</string>
