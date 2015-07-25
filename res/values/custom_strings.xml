@@ -377,6 +377,9 @@
     <string name="notification_light_default_value">Default</string>
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
+    <!-- wake when plugged toggle -->
+    <string name="wake_when_plugged_or_unplugged_title">Wake on plug</string>
+    <string name="wake_when_plugged_or_unplugged_summary">Turn the screen on when connecting or disconnecting a power source</string>
     <!-- Lockscreen wallpaper -->
     <string name="lockscreen_wallpaper_title">Lockscreen wallpaper</string>
     <string name="lockscreen_wallpaper_summary">Set a custom image as lockscreen wallpaper</string>
