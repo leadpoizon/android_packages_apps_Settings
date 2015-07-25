@@ -37,8 +37,10 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
+    private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
 
     private ListPreference mVolumeKeyCursorControl;
+    private SwitchPreference mVolumeControlRingStream;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -55,6 +57,14 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
                     cursorControlAction);
         } else {
             prefScreen.removePreference(mVolumeKeyCursorControl);
+        }
+
+        mVolumeControlRingStream = (SwitchPreference)
+                findPreference(KEY_VOLUME_CONTROL_RING_STREAM);
+        int volumeControlRingtone = Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, 1);
+        if (mVolumeControlRingStream != null) {
+            mVolumeControlRingStream.setChecked(volumeControlRingtone > 0);
         }
     }
 
@@ -86,5 +96,16 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+	
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mVolumeControlRingStream) {
+            int value = mVolumeControlRingStream.isChecked() ? 1 : 0;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VOLUME_KEYS_CONTROL_RING_STREAM, value);
+            return true;
+    }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
