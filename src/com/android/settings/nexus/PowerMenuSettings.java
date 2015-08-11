@@ -26,6 +26,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.ListPreference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -34,6 +35,8 @@ import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.preference.SystemSettingSwitchPreference;
+
 import com.android.internal.util.cm.PowerMenuConstants;
 import static com.android.internal.util.cm.PowerMenuConstants.*;
 
@@ -44,6 +47,9 @@ import java.util.List;
 public class PowerMenuSettings extends SettingsPreferenceFragment {
     final static String TAG = "PowerMenuSettings";
 
+    private static final String ACTION_CATEGORY = "action_category";
+    private static final String POWER_CATEGORY = "power_category";
+	// power items
     private SwitchPreference mRebootPref;
     private SwitchPreference mScreenshotPref;
     private SwitchPreference mScreenRecordPref;
@@ -65,7 +71,14 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.nexus_powermenu_settings);
         mContext = getActivity().getApplicationContext();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
+        final PreferenceCategory powerCategory =
+                (PreferenceCategory) prefScreen.findPreference(POWER_CATEGORY);
+
+		// power items
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
         mAllActions = PowerMenuConstants.getAllActions();
@@ -73,7 +86,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
         for (String action : mAllActions) {
         // Remove preferences not present in the overlay
             if (!isActionAllowed(action)) {
-                getPreferenceScreen().removePreference(findPreference(action));
+                actionCategory.removePreference(findPreference(action));
                 continue;
             }
 
@@ -105,6 +118,10 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
     public void onStart() {
         super.onStart();
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory actionCategory =
+                (PreferenceCategory) prefScreen.findPreference(ACTION_CATEGORY);
+
         if (mRebootPref != null) {
             mRebootPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_REBOOT));
         }
@@ -123,7 +140,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
 
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-                getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                actionCategory.removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
             } else {
                 List<UserInfo> users = ((UserManager) mContext.getSystemService(
                         Context.USER_SERVICE)).getUsers();
