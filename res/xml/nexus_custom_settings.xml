@@ -20,6 +20,11 @@
     <PreferenceCategory
         android:key="nexus_personalize"
         android:title="@string/nexus_interface" >
+	
+        <PreferenceScreen
+            android:fragment="com.android.settings.nexus.LockScreenSettings"
+            android:key="lockscreen_general_category"
+            android:title="@string/lockscreen_settings_title" />
 
         <PreferenceScreen	
             android:fragment="com.android.settings.nexus.NotificationDrawerSettings"
@@ -74,15 +79,10 @@
             android:title="@string/custom_display_title" />
 
         <PreferenceScreen
-            android:fragment="com.android.settings.headsup.HeadsUpSettings"
-            android:key="heads_up_enabled"
-            android:title="@string/category_heads_up" />
+            android:fragment="com.android.settings.nexus.VolNotifSettings"
+            android:key="notif_general_category"
+            android:title="@string/nexus_notification_settings" />
 
-        <PreferenceScreen
-            android:fragment="com.android.settings.nexus.ScreenRecorderSettings"
-            android:key="screen_recorder"
-            android:title="@string/screen_recorder_title" />
-	
     </PreferenceCategory>
 
     <PreferenceScreen

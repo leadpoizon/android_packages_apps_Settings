@@ -32,17 +32,6 @@
             android:key="expanded_desktop"
             android:title="@string/power_menu_expanded_desktop" />
 
-        <PreferenceScreen
-            android:key="lockscreen_wallpaper"
-            android:title="@string/lockscreen_wallpaper_title"
-            android:summary="@string/lockscreen_wallpaper_summary">
-            <intent
-                android:targetPackage="com.slim.wallpaperpicker"
-                android:targetClass="com.slim.wallpaperpicker.WallpaperPickerActivity">
-                    <extra android:name="keyguardMode" android:value="true" />
-            </intent>
-        </PreferenceScreen>
-
         <com.android.settings.preference.GlobalSettingSwitchPreference
             android:key="wake_when_plugged_or_unplugged"
             android:title="@string/wake_when_plugged_or_unplugged_title"
