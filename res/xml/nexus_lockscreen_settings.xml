@@ -18,16 +18,21 @@
     android:key="lockscreen_general_category"
     android:title="@string/lockscreen_settings_title" >
 
-    <PreferenceScreen
+    <PreferenceCategory
         android:key="lockscreen_wallpaper"
-        android:title="@string/lockscreen_wallpaper_title"
-        android:summary="@string/lockscreen_wallpaper_summary">
-        <intent
-            android:targetPackage="com.slim.wallpaperpicker"
-            android:targetClass="com.slim.wallpaperpicker.WallpaperPickerActivity">
-                <extra android:name="keyguardMode" android:value="true" />
-        </intent>
-    </PreferenceScreen>
+        android:title="@string/lockscreen_wallpaper_title" >
+
+        <Preference
+            android:key="lockscreen_wallpaper_set"
+            android:title="@string/lockscreen_wallpaper_set_title"
+            android:persistent="false"/>
+
+        <Preference
+            android:key="lockscreen_wallpaper_clear"
+            android:title="@string/lockscreen_wallpaper_clear_title"
+            android:persistent="false"/>
+
+    </PreferenceCategory>	    
 
     <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_sleep_anywhere"
@@ -43,5 +48,5 @@
         android:key="lockscreen_scramble_pin_layout"
         android:title="@string/unlock_scramble_pin_layout_title"
         android:summary="@string/unlock_scramble_pin_layout_summary" />
-	    
+
 </PreferenceScreen>
