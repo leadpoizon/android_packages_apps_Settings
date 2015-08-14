@@ -39,6 +39,12 @@
         android:key="media_category"
         android:title="@string/media_opt_category" >
 
+        <SwitchPreference
+            android:key="camera_sounds"
+            android:title="@string/camera_sounds_title"
+            android:summary="@string/camera_sounds_summary"
+            android:defaultValue="true" />
+
         <PreferenceScreen
             android:fragment="com.android.settings.nexus.ScreenRecorderSettings"
             android:key="screen_recorder"

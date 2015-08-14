@@ -189,6 +189,9 @@
     <string name="screen_recorder_bitrate_5000000">5000000</string>
     <string name="screen_recorder_bitrate_10000000">10000000</string>
     <string name="screen_recorder_bitrate_20000000">20000000</string>
+    <!-- Camera sound switch -->
+    <string name="camera_sounds_title">Camera shutter sound</string>
+    <string name="camera_sounds_summary">Enable system camera shutter sound</string>
   <!-- Navigation bar -->
     <string name="navigation_bar_opt">Navbar options</string>
     <string name="navigation_bar_cus">Navbar customization</string>
