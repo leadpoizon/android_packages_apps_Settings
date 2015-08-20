@@ -412,7 +412,6 @@
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
     <string name="right_clock">Right clock</string>
     <string name="center_clock">Center clock</string>
-    <string name="left_clock">Left clock</string>
     <string name="clock_date_display">Date</string>
     <string name="clock_date_style">Date style</string>
     <string name="clock_date_format">Date format</string>
