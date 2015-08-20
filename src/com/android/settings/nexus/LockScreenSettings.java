@@ -66,7 +66,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
             if (data != null && data.getData() != null) {
                 Uri uri = data.getData();
                 Intent intent = new Intent();
-                intent.setClassName("com.android.wallpapercropper", "com.android.wallpapercropper.WallpaperCropActivity");
+                intent.setClassName("com.slim.wallpaperpicker", "com.slim.wallpaperpicker.WallpaperCropActivity");
                 intent.putExtra("keyguardMode", "1");
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 intent.setData(uri);
