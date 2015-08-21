@@ -81,7 +81,7 @@
                 android:id="@+id/custom_settings"
                 android:title="@string/custom_settings_title"
                 android:fragment="com.android.settings.nexus.CustomSettings" 
-                android:icon="@drawable/ic_bt_config"
+                android:icon="@drawable/ic_settings_purenexus"
                 />
 
         <dashboard-tile
