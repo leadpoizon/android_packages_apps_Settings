@@ -103,6 +103,7 @@ public class Settings extends SettingsActivity {
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
     public static class WifiCallingSettingsActivity extends SettingsActivity { /* empty */ }
     public static class HeadsUpSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class ExpandedDesktopSettingsActivity extends SettingsActivity { /* empty */ }
     public static class CustomSettingsActivity extends SettingsActivity { /* empty */ }
     public static class DisplayRotationActivity extends SettingsActivity { /* empty */ }
 }
