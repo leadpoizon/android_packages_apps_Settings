@@ -382,9 +382,6 @@
     <string name="recent_card_bg_color_title">Card background color</string>
     <string name="recent_card_text_color_title">Card text color</string>
   <!-- Statusbar Settings -->
-    <!-- Alarm icon toggle -->
-    <string name="alarm_indicator">Alarm icon</string>
-    <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
     <!-- Battery Options -->
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
@@ -397,9 +394,6 @@
     <string name="status_bar_battery_percentage_default">Hidden</string>
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
-    <!-- Bluetooth icon toggle -->
-    <string name="bt_indicator">Bluetooth icon</string>
-    <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
@@ -467,6 +461,21 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+  <!-- Statusbar Icons -->
+    <string name="statusbar_icon_title">Statusbar icons</string>
+    <string name="statusbar_icon_summary">Color &amp; hide statusbar icons</string>
+    <string name="statusbar_hide_icons">Hide icons</string>
+    <string name="statusbar_color_icons">Color icons</string>
+    <!-- Alarm icon toggle -->
+    <string name="alarm_indicator">Alarm icon</string>
+    <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
+    <!-- Bluetooth icon toggle -->
+    <string name="bt_indicator">Bluetooth icon</string>
+    <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
+    <!-- Icon colors -->
+    <string name="statusbar_wifi_color">Color Wifi &amp; Vpn icons</string>
+    <string name="statusbar_network_color">Color Signal &amp; Data icons</string>
+    <string name="statusbar_airplane_color">Color Airplane mode icon</string>
   <!-- VolumeRocker Settings -->
     <!-- Volume button cursor control -->
     <string name="volbtn_cursor_control_title">Keyboard cursor control</string>
