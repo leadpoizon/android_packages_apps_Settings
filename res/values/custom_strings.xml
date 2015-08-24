@@ -383,6 +383,9 @@
     <string name="recent_card_text_color_title">Card text color</string>
   <!-- Statusbar Settings -->
     <!-- Battery Options -->
+    <string name="battery_settings_title">Battery settings</string>
+    <string name="status_bar_battery_summary">Custom battery options</string>
+    <string name="status_bar_battery_title">Battery icon</string>
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
     <string name="status_bar_battery_style_icon_landscape">Icon landscape</string>
@@ -461,18 +464,15 @@
     <!-- Notification count -->
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
-  <!-- Statusbar Icons -->
+    <!-- Statusbar Icons -->
     <string name="statusbar_icon_title">Statusbar icons</string>
     <string name="statusbar_icon_summary">Color &amp; hide statusbar icons</string>
     <string name="statusbar_hide_icons">Hide icons</string>
     <string name="statusbar_color_icons">Color icons</string>
-    <!-- Alarm icon toggle -->
     <string name="alarm_indicator">Alarm icon</string>
     <string name="alarm_indicator_summary">Show alarm icon when enabled</string>
-    <!-- Bluetooth icon toggle -->
     <string name="bt_indicator">Bluetooth icon</string>
     <string name="bt_indicator_summary">Show bluetooth icon when enabled</string>
-    <!-- Icon colors -->
     <string name="statusbar_wifi_color">Color Wifi &amp; Vpn icons</string>
     <string name="statusbar_network_color">Color Signal &amp; Data icons</string>
     <string name="statusbar_airplane_color">Color Airplane mode icon</string>
