@@ -26,13 +26,15 @@
 <!-- Custom Settings -->    
   <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on color below to apply</string>
-    <string name="arrow_right" translatable="false">→</string>
-    <string name="arrow_down" translatable="false">↓</string>
+    <string name="press_color_to_apply">Press on Color to apply</string>
     <string name="hex">Hex:</string>
+    <string name="hex_hint">#FFDDDDDD</string>
     <string name="hex_check_button_text">PREVIEW</string>
-    <string name="hex_hint">#ff000000</string>
-    <string name="longpress_info">longpress red bordered presets to set custom preset</string>
+    <string name="hex_reset_button_text">RESET</string>
+    <string name="colorpicker_summary">Current color</string>
+    <string name="color_right_arrow">"→"</string>
+    <string name="color_down_arrow">"↓"</string>
+    <string name="longpress_info">Longpress box to save color</string>
   <!-- Custom Categorys -->
     <string name="lock_clock_title">cLock</string>
     <string name="status_bar_title">Status bar</string>

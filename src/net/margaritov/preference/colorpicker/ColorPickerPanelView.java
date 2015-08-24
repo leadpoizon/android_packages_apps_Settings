@@ -33,6 +33,7 @@ public class ColorPickerPanelView extends View {
 
     private float mDensity = 1f;
 
+    // Should these be fed in w/ resource colors? Likely not...
     private int mBorderColor = 0xff6E6E6E;
     private int mColor = 0xff000000;
 

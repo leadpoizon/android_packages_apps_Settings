@@ -48,7 +48,7 @@ public class ColorPickerView extends View {
     // Width of border surrounding color panels in pixels
     private final static float BORDER_WIDTH_PX = 1;
 
-    // Width in dp of the hue panel...
+    // Width in dp of the hue panel
     private float HUE_PANEL_WIDTH;
     // Height in dp of the alpha panel
     private float ALPHA_PANEL_HEIGHT;
@@ -133,6 +133,7 @@ public class ColorPickerView extends View {
         ALPHA_PANEL_HEIGHT = getContext().getResources().getDimension(R.dimen.colorpicker_alpha_height);
         HUE_PANEL_WIDTH = getContext().getResources().getDimension(R.dimen.colorpicker_hue_width);
 
+        // a *= b is the same as a = a * b
         RECTANGLE_TRACKER_OFFSET *= mDensity;
         PANEL_SPACING = PANEL_SPACING * mDensity;
 
@@ -156,6 +157,7 @@ public class ColorPickerView extends View {
 
 
         mSatValTrackerPaint.setStyle(Style.STROKE);
+        // I wonder if 2f is arbitrary... same as the 14f...
         mSatValTrackerPaint.setStrokeWidth(2f * mDensity);
         mSatValTrackerPaint.setAntiAlias(true);
 
@@ -164,6 +166,7 @@ public class ColorPickerView extends View {
         mHueTrackerPaint.setStrokeWidth(2f * mDensity);
         mHueTrackerPaint.setAntiAlias(true);
 
+        // should this 0xff1c1c1c be a int or color resource?
         mAlphaTextPaint.setColor(0xff1c1c1c);
         mAlphaTextPaint.setTextSize(14f * mDensity);
         mAlphaTextPaint.setAntiAlias(true);
@@ -179,6 +182,7 @@ public class ColorPickerView extends View {
     }
 
     private int[] buildHueColorArray(){
+        // I wonder if the fact that it is 361 items in the array holds special significance... perhaps degrees?
         int[] hue = new int[361];
 
         int count = 0;
@@ -229,6 +233,7 @@ public class ColorPickerView extends View {
         canvas.drawCircle(
             p.x, p.y, PALETTE_CIRCLE_TRACKER_RADIUS - 1f * mDensity, mSatValTrackerPaint);
 
+        // What is the sig of this ffdddddd call... should it be a resource?
         mSatValTrackerPaint.setColor(0xffdddddd);
         canvas.drawCircle(p.x, p.y, PALETTE_CIRCLE_TRACKER_RADIUS, mSatValTrackerPaint);
     }
@@ -702,8 +707,7 @@ public class ColorPickerView extends View {
 
         float left = dRect.right - HUE_PANEL_WIDTH + BORDER_WIDTH_PX;
         float top = dRect.top + BORDER_WIDTH_PX;
-        float bottom = dRect.bottom - BORDER_WIDTH_PX - (mShowAlphaPanel
-            ? (PANEL_SPACING + ALPHA_PANEL_HEIGHT) : 0);
+        float bottom = dRect.bottom - BORDER_WIDTH_PX - (mShowAlphaPanel ? (PANEL_SPACING + ALPHA_PANEL_HEIGHT) : 0);
         float right = dRect.right - BORDER_WIDTH_PX;
 
         mHueRect = new RectF(left, top, right, bottom);
@@ -722,11 +726,7 @@ public class ColorPickerView extends View {
         mAlphaRect = new RectF(left, top, right, bottom);
 
         mAlphaPattern = new AlphaPatternDrawable((int) (5 * mDensity), getContext());
-        mAlphaPattern.setBounds(
-            Math.round(mAlphaRect.left),
-            Math.round(mAlphaRect.top),
-            Math.round(mAlphaRect.right),
-            Math.round(mAlphaRect.bottom)
+        mAlphaPattern.setBounds(Math.round(mAlphaRect.left), Math.round(mAlphaRect.top), Math.round(mAlphaRect.right), Math.round(mAlphaRect.bottom)
         );
     }
 
@@ -758,7 +758,7 @@ public class ColorPickerView extends View {
 
     // Set the color this view should show and flag if you want oncolorchangelistener callback
     public void setColor(int color, boolean callback){
-        // Store this to avoid hex changes that can happen when converting int-to-HSV-to-int
+        // Store this to avoid changes that can happen when converting int-to-HSV-to-int
         OrigColor = color;
 
         int alpha = Color.alpha(color);

@@ -19,6 +19,8 @@
 package net.margaritov.preference.colorpicker;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -26,21 +28,21 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.android.settings.R;
+import net.margaritov.preference.colorpicker.ColorPickerDialog.OnColorChangedListener;
 
 import java.util.Locale;
 
 
-public class ColorPickerPreference extends Preference implements
-        Preference.OnPreferenceClickListener, ColorPickerDialog.OnColorChangedListener {
+public class ColorPickerPreference extends Preference implements OnPreferenceClickListener, OnColorChangedListener {
 
     View mView;
     ColorPickerDialog mDialog;
@@ -116,6 +118,7 @@ public class ColorPickerPreference extends Preference implements
             }
 
             mDefault = convertToColorInt(attrs.getAttributeValue(androidns, "defaultValue"));
+			a.recycle();
         }
     }
 
@@ -172,7 +175,7 @@ public class ColorPickerPreference extends Preference implements
     }
 
     private Bitmap getPreviewBitmap(boolean enable) {
-        int d = (int) (mDensity * 31);
+        int d = (int) (mDensity * 31); // 30dip - but why show 31 there then?
         Bitmap bm = Bitmap.createBitmap(d, d, Config.ARGB_8888);
         int w = bm.getWidth();
         int h = bm.getHeight();

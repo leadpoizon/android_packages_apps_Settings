@@ -20,11 +20,13 @@ package net.margaritov.preference.colorpicker;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.graphics.PixelFormat;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -33,38 +35,24 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.settings.R;
+import net.margaritov.preference.colorpicker.ColorPickerView.OnColorChangedListener;
 
 import java.util.Locale;
 
-public class ColorPickerDialog
-        extends
-            Dialog
-        implements
-            ColorPickerView.OnColorChangedListener,
-            View.OnClickListener {
+public class ColorPickerDialog extends Dialog implements OnColorChangedListener, OnClickListener {
 
     public static String GLOBAL_COLOR_USER = "global_color_user";
 
     private ColorPickerView mColorPicker;
 
-    private ColorPickerPanelView mOldColor;
     private ColorPickerPanelView mNewColor;
 
-    private ColorPickerPanelView mWhite;
-    private ColorPickerPanelView mBlack;
-    private ColorPickerPanelView mDefault;
-    private ColorPickerPanelView mUserSet1;
-    private ColorPickerPanelView mUserSet2;
-    private ColorPickerPanelView mUserSet3;
-
     private EditText mHex;
-    private Button mSetButton;
 
     private boolean mAlphaEnabled;
     private boolean mAlphaTextEnabled;
 
     private String mKey;
-    private String mTitle;
 
     private int mUserBorder;
 
@@ -90,41 +78,36 @@ public class ColorPickerDialog
         setUp(color, defaultColor, initKey, itemTitle);
     }
 
-    private void setUp(int color, int defaultColor, String initKey, String itemTitle) {
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
+    private void setUp(int color, final int defaultColor, String initKey, String itemTitle) {
+        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+        // null root seems fine here
         View layout = inflater.inflate(R.layout.dialog_color_picker, null);
 
         setContentView(layout);
         mKey = initKey;
-        mTitle = itemTitle;
 
         mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
-        mOldColor = (ColorPickerPanelView) layout.findViewById(R.id.old_color_panel);
+        ColorPickerPanelView mOldColor = (ColorPickerPanelView) layout.findViewById(R.id.old_color_panel);
         mNewColor = (ColorPickerPanelView) layout.findViewById(R.id.new_color_panel);
 
         TextView mTitleText = (TextView) layout.findViewById(R.id.colorpick_title);
-        mTitleText.setText(mTitle);
+        mTitleText.setText(itemTitle);
 
         mUserBorder = getContext().getResources().getColor(R.color.userpanel_border);
 
-        mWhite = (ColorPickerPanelView) layout.findViewById(R.id.white_panel);
-        mBlack = (ColorPickerPanelView) layout.findViewById(R.id.black_panel);
-        mDefault = (ColorPickerPanelView) layout.findViewById(R.id.default_panel);
-        mUserSet1 = (ColorPickerPanelView) layout.findViewById(R.id.userset1_panel);
-        mUserSet2 = (ColorPickerPanelView) layout.findViewById(R.id.userset2_panel);
-        mUserSet3 = (ColorPickerPanelView) layout.findViewById(R.id.userset3_panel);
+        ColorPickerPanelView mUserSet1 = (ColorPickerPanelView) layout.findViewById(R.id.userset1_panel);
+        ColorPickerPanelView mUserSet2 = (ColorPickerPanelView) layout.findViewById(R.id.userset2_panel);
+        ColorPickerPanelView mUserSet3 = (ColorPickerPanelView) layout.findViewById(R.id.userset3_panel);
+        ColorPickerPanelView mUserSet4 = (ColorPickerPanelView) layout.findViewById(R.id.userset4_panel);
+        ColorPickerPanelView mUserSet5 = (ColorPickerPanelView) layout.findViewById(R.id.userset5_panel);
+        ColorPickerPanelView mUserSet6 = (ColorPickerPanelView) layout.findViewById(R.id.userset6_panel);
 
         mHex = (EditText) layout.findViewById(R.id.hex);
-        mSetButton = (Button) layout.findViewById(R.id.enter);
+        Button mSetButton = (Button) layout.findViewById(R.id.enter);
+        Button mResetButton = (Button) layout.findViewById(R.id.reset);
 
-        ((LinearLayout) mOldColor.getParent()).setPadding(
-                Math.round(mColorPicker.getDrawingOffset()),
-                0,
-                Math.round(mColorPicker.getDrawingOffset()),
-                0
-                );
+        ((LinearLayout) mOldColor.getParent()).setPadding(Math.round(mColorPicker.getDrawingOffset()), 0, Math.round(mColorPicker.getDrawingOffset()), 0);
 
         mOldColor.setOnClickListener(this);
         mNewColor.setOnClickListener(this);
@@ -132,12 +115,13 @@ public class ColorPickerDialog
         mOldColor.setColor(color);
         mColorPicker.setColor(color, true);
 
-        setColorAndClickAction(mWhite, Color.WHITE);
-        setColorAndClickAction(mBlack, Color.BLACK);
-        setColorAndClickAction(mDefault, defaultColor); // default color
         setColorAndClickActionCustom(mUserSet1, "user1", getContext().getResources().getColor(R.color.userpanel_default1));
         setColorAndClickActionCustom(mUserSet2, "user2", getContext().getResources().getColor(R.color.userpanel_default2));
         setColorAndClickActionCustom(mUserSet3, "user3", getContext().getResources().getColor(R.color.userpanel_default3));
+        setColorAndClickActionCustom(mUserSet4, "user4", getContext().getResources().getColor(R.color.userpanel_default4));
+        setColorAndClickActionCustom(mUserSet5, "user5", getContext().getResources().getColor(R.color.userpanel_default5));
+        setColorAndClickActionCustom(mUserSet6, "user6", getContext().getResources().getColor(R.color.userpanel_default6));
+
 
         if (mHex != null) {
             mHex.setText(ColorPickerPreference.convertToARGB(color).toUpperCase(Locale.getDefault()));
@@ -156,6 +140,19 @@ public class ColorPickerDialog
                 }
             });
         }
+        if (mResetButton != null) {
+            mResetButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    try {
+                        mColorPicker.setColor(defaultColor, true);
+                    } catch (Exception e) {
+                    }
+                }
+            });
+        }
+
     }
 
     @Override
@@ -198,6 +195,7 @@ public class ColorPickerDialog
         }
     }
 
+/* Maybe add in a pass for xml resource default color when method is called to pass through to default for setColor... */
     public void setColorAndClickActionCustom(final ColorPickerPanelView previewRect, final String extraKey, final int color) {
         if (previewRect != null) {
             final String customKey = (Settings.System.getInt(getContext().getContentResolver(), GLOBAL_COLOR_USER, 0) == 0) ? "globalcolor" : mKey;
@@ -215,8 +213,8 @@ public class ColorPickerDialog
             });
 
             previewRect.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
+                @Override
+                public boolean onLongClick(View v) {
                     try {
                         Settings.System.putInt(getContext().getContentResolver(), customKey + "_" + extraKey, mNewColor.getColor());
                         previewRect.setColor(mNewColor.getColor());
@@ -224,7 +222,7 @@ public class ColorPickerDialog
                     }
                     return true;
                 }
-                });
+            });
         }
     }
 

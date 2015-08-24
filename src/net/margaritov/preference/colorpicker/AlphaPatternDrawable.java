@@ -28,11 +28,7 @@ import android.graphics.drawable.Drawable;
 
 import com.android.settings.R;
 
-/**
- * From author Daniel Nilsson - This draws a simple 2 color chessboard pattern.
- * It's pattern you will often see as a background behind a
- * partly transparent image in many applications.
- */
+
 public class AlphaPatternDrawable extends Drawable {
 
     private int mRectangleSize = 10;
