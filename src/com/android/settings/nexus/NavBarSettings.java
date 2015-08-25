@@ -33,6 +33,10 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.preference.SystemSettingSwitchPreference;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class NavBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
@@ -42,12 +46,15 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
     private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
     // Naviigation bar left
     private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
+    private static final String KEY_NAVIGATION_KEY_COLOR = "navbar_key_color";
 
     private static final String CATEGORY_NAVBAR = "navigation_bar";
     private static final String CATEGORY_NAVBARC = "navigation_barc";
 
     // kill-app long press back
     private SwitchPreference mKillAppLongPressBack;
+    private ColorPickerPreference mNavKeyColor;
+    private SystemSettingSwitchPreference mNavBarEnable;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -85,6 +92,16 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
                     findPreference(Settings.System.NAVBAR_LEFT_IN_LANDSCAPE));
         }
 
+        mNavBarEnable = (SystemSettingSwitchPreference) prefScreen.findPreference("navigation_bar_show");
+
+        mNavKeyColor = (ColorPickerPreference) findPreference(KEY_NAVIGATION_KEY_COLOR);
+        mNavKeyColor.setOnPreferenceChangeListener(this);
+        mNavKeyColor.setSummary(mNavKeyColor.getSummaryText() + ColorPickerPreference.convertToARGB(Settings.System.getInt(resolver,
+                     Settings.System.NAVIGATION_KEY_COLOR, mNavKeyColor.getPrefDefault())));
+        mNavKeyColor.setNewPreviewColor(Settings.System.getInt(resolver, Settings.System.NAVIGATION_KEY_COLOR, mNavKeyColor.getPrefDefault()));
+
+        mNavKeyColor.setPreviewDim(mNavBarEnable.isChecked());
+
     }
 
     @Override
@@ -101,6 +118,21 @@ public class NavBarSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putInt(getContentResolver(), KILL_APP_LONGPRESS_BACK,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mNavKeyColor) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NAVIGATION_KEY_COLOR, (Integer) objValue);
+            preference.setSummary(((ColorPickerPreference) preference).getSummaryText() + ColorPickerPreference.convertToARGB((Integer) objValue));
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
+        if (preference == mNavBarEnable) {
+            mNavKeyColor.setPreviewDim(mNavBarEnable.isChecked());
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
         return false;
     }
