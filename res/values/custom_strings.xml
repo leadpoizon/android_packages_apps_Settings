@@ -388,7 +388,7 @@
   <!-- Statusbar Settings -->
     <!-- Battery Options -->
     <string name="battery_settings_title">Battery settings</string>
-    <string name="status_bar_battery_summary">Custom battery &amp; batterybar options</string>
+    <string name="status_bar_battery_summary">Custom battery related options</string>
     <string name="status_bar_battery_title">Battery icon</string>
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
@@ -408,6 +408,11 @@
     <string name="battery_bar_thickness_title">Battery bar thickness</string>
     <string name="battery_bar_animate_title">Charging animation</string>
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+    <string name="battery_notif_title">Battery notifications</string>
+    <string name="battery_saver_notif_title">Battery saver notification</string>
+    <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
+    <string name="battery_low_notif_title">Low battery notification</string>
+    <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
     <!-- Brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>

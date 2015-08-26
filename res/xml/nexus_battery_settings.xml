@@ -77,4 +77,22 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="bat_notif_title"
+        android:title="@string/battery_notif_title">
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="battery_saver_notification"
+            android:title="@string/battery_saver_notif_title"
+            android:summary="@string/battery_saver_notif_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="battery_low_notification"
+            android:title="@string/battery_low_notif_title"
+            android:summary="@string/battery_low_notif_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
