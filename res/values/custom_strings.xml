@@ -584,7 +584,6 @@
     <string name="ring_notification_volume_option_tile">Ring and notification volume</string>
     <!-- Zen Mode settings -->
     <string name="zen_mode_none_category">No interruptions</string>
-    <string name="zen_mode_alarms">Allow alarms</string>
     <string name="allow_lights_title">Allow notification lights</string>
 
 <!-- Appops -->
