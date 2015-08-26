@@ -16,6 +16,7 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="zen_mode_settings"
     android:title="@string/zen_mode_settings_title" >
 
@@ -28,6 +29,12 @@
     <PreferenceCategory
         android:key="none"
         android:title="@string/zen_mode_none_category" >
+
+    <!-- None to Silent mode -->
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="none_is_silent"
+            android:title="@string/none_is_silent_title"
+            android:summary="@string/none_is_silent_summary" />
 
         <!-- Whether to allow notification lights in zen mode -->
         <!-- This is set to true to match the default state in Android 5.1 -->
@@ -98,6 +105,7 @@
                 android:title="@string/zen_mode_downtime_mode_title"
                 android:order="100"
                 android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
