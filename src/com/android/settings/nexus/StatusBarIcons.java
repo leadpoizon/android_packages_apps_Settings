@@ -40,12 +40,14 @@ public class StatusBarIcons extends SettingsPreferenceFragment
     private static final String STATUS_BAR_WIFI_COLOR  = "status_bar_wifi_color";
     private static final String STATUS_BAR_NETWORK_COLOR  = "status_bar_network_color";
     private static final String STATUS_BAR_AIRPLANE_COLOR = "status_bar_airplane_color";
+    private static final String STATUS_BAR_SYSTEMICON_COLOR = "status_bar_systemicon_color";
 
     private static final String COLOR_ICONS  = "coloricons";
 
     private ColorPickerPreference mWifiColor;
     private ColorPickerPreference mNetworkColor;
     private ColorPickerPreference mAirplaneColor;
+    private ColorPickerPreference mSystemIconColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -75,6 +77,12 @@ public class StatusBarIcons extends SettingsPreferenceFragment
                      Settings.System.STATUS_BAR_AIRPLANE_COLOR, mAirplaneColor.getPrefDefault())));
         mAirplaneColor.setNewPreviewColor(Settings.System.getInt(resolver, Settings.System.STATUS_BAR_AIRPLANE_COLOR, mAirplaneColor.getPrefDefault()));
 
+        mSystemIconColor = (ColorPickerPreference) findPreference(STATUS_BAR_SYSTEMICON_COLOR);
+        mSystemIconColor.setOnPreferenceChangeListener(this);
+        mSystemIconColor.setSummary(mSystemIconColor.getSummaryText() + ColorPickerPreference.convertToARGB(Settings.System.getInt(resolver,
+                     Settings.System.STATUS_BAR_SYSTEMICON_COLOR, mSystemIconColor.getPrefDefault())));
+        mSystemIconColor.setNewPreviewColor(Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SYSTEMICON_COLOR, mSystemIconColor.getPrefDefault()));
+
          if (Utils.isWifiOnly(getActivity())) {
              iconcolors.removePreference(findPreference(Settings.System.STATUS_BAR_NETWORK_COLOR));
          }
@@ -98,6 +106,10 @@ public class StatusBarIcons extends SettingsPreferenceFragment
             return true;
         } else if (preference == mAirplaneColor) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_AIRPLANE_COLOR, (Integer) newValue);
+            preference.setSummary(((ColorPickerPreference) preference).getSummaryText() + ColorPickerPreference.convertToARGB((Integer) newValue));
+            return true;
+        } else if (preference == mSystemIconColor) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_SYSTEMICON_COLOR, (Integer) newValue);
             preference.setSummary(((ColorPickerPreference) preference).getSummaryText() + ColorPickerPreference.convertToARGB((Integer) newValue));
             return true;
         }

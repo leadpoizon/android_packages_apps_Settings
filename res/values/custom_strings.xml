@@ -493,6 +493,7 @@
     <string name="statusbar_wifi_color">Color Wifi &amp; Vpn icons</string>
     <string name="statusbar_network_color">Color Signal &amp; Data icons</string>
     <string name="statusbar_airplane_color">Color Airplane mode icon</string>
+    <string name="statusbar_sysicon_color">Color System icons</string>
   <!-- VolumeRocker Settings -->
     <!-- Volume button cursor control -->
     <string name="volbtn_cursor_control_title">Keyboard cursor control</string>

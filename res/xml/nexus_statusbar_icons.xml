@@ -65,6 +65,14 @@
             pure:alphaSlider="true"
             pure:alphaText="true" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_systemicon_color"
+            android:title="@string/statusbar_sysicon_color"
+            android:dialogTitle="@string/statusbar_sysicon_color"
+            android:defaultValue="0xffffffff"
+            pure:alphaSlider="true"
+            pure:alphaText="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
