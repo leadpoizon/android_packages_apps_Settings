@@ -32,6 +32,11 @@
             android:title="@string/double_tap_sleep_anywhere_title"
             android:summary="@string/double_tap_sleep_anywhere_summary" />
 
+        <com.android.settings.preference.SecureSettingSwitchPreference
+            android:key="long_press_lock_icon_torch"
+            android:title="@string/longpress_lock_icon_torch_title"
+            android:summary="@string/longpress_lock_icon_torch_summary" />
+
         <com.android.settings.preference.SystemSettingSwitchPreference
             android:key="lockscreen_quick_unlock_control"
             android:title="@string/unlock_quick_unlock_control_title"

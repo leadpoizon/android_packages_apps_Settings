@@ -135,6 +135,9 @@
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Reset lock screen wallpaper</string>
     <string name="reset_lockscreen_wallpaper">Lockscreen wallpaper reset</string>
+    <!-- Long press on lock screen lock icon for torch -->
+    <string name="longpress_lock_icon_torch_title">Long press lock icon to launch torch</string>
+    <string name="longpress_lock_icon_torch_summary">This option will not work if both smart lock and accessibility touch exploration are enabled</string>
     <!-- Pin Scramble -->
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
