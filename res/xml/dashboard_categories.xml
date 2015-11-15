@@ -72,45 +72,6 @@
 
     </dashboard-category>
 
-    <!-- Rom Control -->
-    <dashboard-category
-            android:id="@+id/custom_section"
-            android:title="@string/header_category_custom" >
-
-        <!-- Custom Settings -->
-        <dashboard-tile
-                android:id="@+id/custom_settings"
-                android:icon="@drawable/ic_settings_purenexus"
-                android:title="@string/custom_settings_title">
-		<intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.android.purenexussettings"
-                    android:targetClass="com.android.purenexussettings.TinkerActivity" />
-        </dashboard-tile>
-
-        <dashboard-tile
-                android:id="@+id/bitsyko_layers"
-                android:icon="@drawable/ic_bitsyko_layers"
-                android:title="@string/bitsyko_layers">
-		<intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.lovejoy777.rroandlayersmanager"
-                    android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
-        </dashboard-tile>
-
-        <!-- SuperSU -->
-        <dashboard-tile
-                android:id="@+id/supersu_settings"
-                android:icon="@drawable/ic_settings_supersu"
-                android:title="@string/supersu_title">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="eu.chainfire.supersu"
-                    android:targetClass="eu.chainfire.supersu.MainActivity" />
-        </dashboard-tile>
-
-    </dashboard-category>
-
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"
