@@ -1876,7 +1876,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                     return context.getSharedPreferences(DevelopmentSettings.PREF_FILE,
                             Context.MODE_PRIVATE).getBoolean(
                                     DevelopmentSettings.PREF_SHOW,
-                                    android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug") || android.os.Build.TYPE.equals("user"));
+                                    android.os.Build.TYPE.equals("eng"));
                 }
 
                 @Override
