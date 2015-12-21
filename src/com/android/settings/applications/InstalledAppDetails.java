@@ -442,7 +442,7 @@ public class InstalledAppDetails extends AppInfoBase
     private void setAppLabelAndIcon(PackageInfo pkgInfo) {
         final View appSnippet = mHeader.findViewById(R.id.app_snippet);
         mState.ensureIcon(mAppEntry);
-        setupAppSnippet(appSnippet, mAppEntry.label, mAppEntry.icon,
+        setupAppSnippet(appSnippet, mAppEntry.label, mAppEntry.icon, pkgInfo.packageName,
                 pkgInfo != null ? pkgInfo.versionName : null);
     }
 
@@ -704,6 +704,10 @@ public class InstalledAppDetails extends AppInfoBase
      * @see android.view.View.OnClickListener#onClick(android.view.View)
      */
     public void onClick(View v) {
+        if (mAppEntry == null) {
+            setIntentAndFinish(true, true);
+            return;
+        }
         String packageName = mAppEntry.info.packageName;
         if(v == mUninstallButton) {
             if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
@@ -761,16 +765,43 @@ public class InstalledAppDetails extends AppInfoBase
         return true;
     }
 
-    public static void setupAppSnippet(View appSnippet, CharSequence label, Drawable icon,
+    public static void setupAppSnippet(View appSnippet, CharSequence label, Drawable icon, CharSequence packageName,
             CharSequence versionName) {
         LayoutInflater.from(appSnippet.getContext()).inflate(R.layout.widget_text_views,
                 (ViewGroup) appSnippet.findViewById(android.R.id.widget_frame));
 
         ImageView iconView = (ImageView) appSnippet.findViewById(android.R.id.icon);
         iconView.setImageDrawable(icon);
+
+        // Clicking on application icon opens application.
+        final String finalPackageName = String.valueOf(packageName);
+        iconView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PackageManager pm = v.getContext().getPackageManager();
+                Intent intent = pm.getLaunchIntentForPackage(finalPackageName);
+                if (intent == null)
+                    return;
+
+                v.getContext().startActivity(intent);
+            }
+        });
+
         // Set application name.
         TextView labelView = (TextView) appSnippet.findViewById(android.R.id.title);
         labelView.setText(label);
+        
+	    // Set application package name.
+        TextView packageNameView = (TextView) appSnippet.findViewById(R.id.pkgname);
+        
+        if (!TextUtils.isEmpty(packageName)) {
+            packageNameView.setSelected(true);
+            packageNameView.setVisibility(View.VISIBLE);
+            packageNameView.setText(packageName);
+        } else {
+            packageNameView.setVisibility(View.INVISIBLE);
+        }
+        
         // Version number of application
         TextView appVersion = (TextView) appSnippet.findViewById(R.id.widget_text1);
 
@@ -961,7 +992,6 @@ public class InstalledAppDetails extends AppInfoBase
             mPermissionReceiver = null;
             final Resources res = getResources();
             CharSequence summary = null;
-            boolean enabled = false;
             if (counts != null) {
                 int totalCount = counts[1];
                 int additionalCounts = counts[2];
@@ -970,8 +1000,6 @@ public class InstalledAppDetails extends AppInfoBase
                     summary = res.getString(
                             R.string.runtime_permissions_summary_no_permissions_requested);
                 } else {
-                    enabled = true;
-
                     final ArrayList<CharSequence> list = new ArrayList(Arrays.asList(groupLabels));
                     if (additionalCounts > 0) {
                         // N additional permissions.
@@ -988,7 +1016,6 @@ public class InstalledAppDetails extends AppInfoBase
                 }
             }
             mPermissionsPreference.setSummary(summary);
-            mPermissionsPreference.setEnabled(enabled);
         }
     };
 }
